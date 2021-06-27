@@ -88,7 +88,7 @@ class TitleState extends MusicBeatState
 		#elseif CHARTING
 		FlxG.switchState(new ChartingState());
 		#else
-		new FlxTimer().start(1, function(tmr:FlxTimer)
+		new FlxTimer().start(3, function(tmr:FlxTimer)
 		{
 			startIntro();
 		});
@@ -132,7 +132,7 @@ class TitleState extends MusicBeatState
 			// music.loadStream(Paths.music('freakyMenu'));
 			// FlxG.sound.list.add(music);
 			// music.play();
-			FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+			FlxG.sound.playMusic(Paths.music('Test'), 0);
 
 			FlxG.sound.music.fadeIn(4, 0, 0.7);
 		}
@@ -286,7 +286,7 @@ class TitleState extends MusicBeatState
 			transitioning = true;
 			// FlxG.sound.music.stop();
 
-			new FlxTimer().start(2, function(tmr:FlxTimer)
+			new FlxTimer().start(3, function(tmr:FlxTimer)
 			{
 				// Check if version is outdated
 
@@ -294,7 +294,7 @@ class TitleState extends MusicBeatState
 
 				if (version.trim() != NGio.GAME_VER_NUMS.trim() && !OutdatedSubState.leftState)
 				{
-					FlxG.switchState(new OutdatedSubState());
+					FlxG.switchState(new MainMenuState());
 					trace('OLD VERSION!');
 					trace('old ver');
 					trace(version.trim());
@@ -303,7 +303,7 @@ class TitleState extends MusicBeatState
 				}
 				else
 				{
-					FlxG.switchState(new MainMenuState());
+					FlxG.switchState(new  MainMenuState());
 				}
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
@@ -364,7 +364,7 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				createCoolText(['me', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('present');
@@ -406,7 +406,7 @@ class TitleState extends MusicBeatState
 				addMoreText('Night');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Funkin Test Bruh'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();
